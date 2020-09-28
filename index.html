@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" href="style.css">
+	</link>
+	<title>AR Controller</title>
+	<!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
+
+</head>
+
+<body>
+
+	<nav style="display:none">
+		<ul>
+			<li>Connect Bluetooth</li>
+			<li>Send G-Code</li>
+			<li>Gyroscope</li>
+			<li>Acceleration</li>
+			<li>WebAR</li>
+		</ul>
+	</nav>
+
+	<section>
+		<article id="connect">
+			<input type="button" value="Connect" id="connectButton" />
+			<input type="button" value="Disconnect" id="disconnectButton" />
+		</article>
+
+		<article id="manual">
+			<div>
+				<input type="button" value="Home" onclick="home()" />
+			</div>
+			<div>
+				<input type="button" value="Send" onclick="sendGCode()" />
+				<textarea type="text" id="gcode">G0 X-15
+G0 Y-30
+G0 X0
+G0 Y-5</textarea>
+				<div id="demo">demo</div>
+			</div>
+		</article>
+
+		<article>
+			<div id="roll">roll</div>
+			<div id="pitch">pitch</div>
+			<div id="yaw">yaw</div>
+
+			<div class="garden">
+				<div class="ball"></div>
+			</div>
+
+			<pre class="output"></pre>
+		</article>
+
+		<article style="display: none">
+			<div id="acc">acc</div>
+		</article>
+
+		<article id="webxr">
+			<div id="overlay">
+				<header>
+					<div id="session-info"></div>
+					<div id="warning-zone"></div>
+					<input type="button" id="xr-button" value="XR not found" class="barebones-button" disabled />
+					<input type="button" value="Home" onclick="home()" />
+					<div id="pose">position</div>
+				</header>
+			</div>
+		</article>
+
+
+		<!--
+		<a-scene vr-mode-ui="enterVRButton: #myEnterVRButton">
+			<a id="myEnterVRButton" href="#"></a>
+			<a-box width="0.25" height="0.25" depth="0.25" position="-0.25 0.125 -0.75" rotation="0 45 0"
+				color="#4CC3D9"></a-box>
+			<a-sphere position="0 0.3125 -1.25" radius="0.3125" color="#EF2D5E"></a-sphere>
+			<a-cylinder position="0.25 0.1875 -0.75" radius="0.125" height="0.375" color="#FFC65D"></a-cylinder>
+			<a-plane position="0 0 -1" rotation="-90 0 0" width="1" height="1" color="#7BC8A4" shadow></a-plane>
+		</a-scene>-->
+	</section>
+	<script type="text/javascript" src="javascript.js"></script>
+</body>
+
+</html>
