@@ -295,8 +295,7 @@ function onXRFrame(t, frame) {
 		gl.clearColor(Math.cos(time / 2000), Math.cos(time / 4000), Math.cos(time / 6000), 0.5);
 		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);*/
 
-		if (!ready || !characteristic || isNaN(x) || isNaN(oz)) { return }
-		ready = false;
+		if (!characteristic || isNaN(x) || isNaN(oz)) { return }
 		let gcode = "X" + (-oz*5-50) + " Y" + (x-50) + "\n";
 		document.getElementById("demo").innerHTML = gcode;
 		sendGCode(gcode);
